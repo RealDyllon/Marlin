@@ -46,7 +46,7 @@
 
   #include "../core/types.h"  // Ahead of sanity-checks
 
-  #include "SanityCheck.h"
+  // #include "SanityCheck.h"
   #include HAL_PATH(../HAL, inc/SanityCheck.h)
 
   // Include all core headers
