@@ -3,10 +3,9 @@
 
 ### How to Test
 
-1. On everything and connect to pronterface.
-2. Use the Z slider in the UI - add 10.
-3. Then feed the G-code
-
+1. Switch everything on and connect to pronterface.
+2. Then feed G-code
+3. Make sure that the first G-code instruction contains `f100`
 
 ![GitHub](https://img.shields.io/github/license/marlinfirmware/marlin.svg)
 ![GitHub contributors](https://img.shields.io/github/contributors/marlinfirmware/marlin.svg)
