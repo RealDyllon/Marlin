@@ -102,7 +102,7 @@
  *
  * :[-1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
-#define SERIAL_PORT -1
+#define SERIAL_PORT 0
 
 /**
  * Serial Port Baud Rate
@@ -139,11 +139,11 @@
 
 // Choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
-  #define MOTHERBOARD BOARD_RUMBA32_MKS
+  #define MOTHERBOARD BOARD_RAMPS_14_EFB 
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Hexapod Changed Pin file with IJK endstops"
+#define CUSTOM_MACHINE_NAME "Hexapod using ramps"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -163,7 +163,7 @@
  *
  * :[3, 4, 5, 6]
  */
-#define LINEAR_AXES 6
+#define LINEAR_AXES 5
 
 /**
  * Axis codes for additional axes:
@@ -745,18 +745,18 @@
 // Specify here all the endstop connectors that are connected to any endstop or probe.
 // Almost all printers will be using one per axis. Probes will use one or more of the
 // extra connectors. Leave undefined any used for non-endstop and non-probe purposes.
-#define USE_XMIN_PLUG
-#define USE_YMIN_PLUG
-#define USE_ZMIN_PLUG
-#define USE_IMIN_PLUG
-#define USE_JMIN_PLUG
-#define USE_KMIN_PLUG
-#define USE_XMAX_PLUG
-#define USE_YMAX_PLUG
-#define USE_ZMAX_PLUG
-#define USE_IMAX_PLUG
-#define USE_JMAX_PLUG
-#define USE_KMAX_PLUG
+// #define USE_XMIN_PLUG
+// #define USE_YMIN_PLUG
+// #define USE_ZMIN_PLUG
+// #define USE_IMIN_PLUG
+// #define USE_JMIN_PLUG
+// #define USE_KMIN_PLUG
+// #define USE_XMAX_PLUG
+// #define USE_YMAX_PLUG
+// #define USE_ZMAX_PLUG
+// #define USE_IMAX_PLUG
+// #define USE_JMAX_PLUG
+// #define USE_KMAX_PLUG
 
 // Enable pullup for all endstops to prevent a floating state
 #define ENDSTOPPULLUPS
@@ -802,13 +802,13 @@
 #define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define I_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define J_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define K_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+// #define K_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define X_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Y_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Z_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define I_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define J_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define K_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+// #define K_MAX_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Z_MIN_PROBE_ENDSTOP_INVERTING false // Set to true to invert the logic of the probe.
 
 /**
@@ -839,7 +839,7 @@
 //#define Z4_DRIVER_TYPE A4988
 #define I_DRIVER_TYPE  A4988
 #define J_DRIVER_TYPE  A4988
-#define K_DRIVER_TYPE  A4988
+// #define K_DRIVER_TYPE  A4988
 // #define E0_DRIVER_TYPE A4988
 //#define E1_DRIVER_TYPE A4988
 //#define E2_DRIVER_TYPE A4988
@@ -895,14 +895,14 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 800, 800, 800, 800, 800, 800 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 3200, 3200, 3200, 3200, 3200 }
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 400, 400, 400, 400, 400, 400 }
+#define DEFAULT_MAX_FEEDRATE          { 1600, 1600, 1600, 1600, 1600 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -915,7 +915,7 @@
  * Override with M201
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 2000, 2000, 2000, 2000, 2000, 2000 }
+#define DEFAULT_MAX_ACCELERATION      { 4000, 4000, 4000, 4000, 4000 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -1714,7 +1714,7 @@
 #endif
 
 // Homing speeds (mm/min)
-#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (50*60), (50*60), (50*60), (50*60) }
+#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (50*60), (50*60), (50*60) }
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
