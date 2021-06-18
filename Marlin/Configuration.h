@@ -139,11 +139,11 @@
 
 // Choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
-#define MOTHERBOARD BOARD_RUMBA32_MKS
+  #define MOTHERBOARD BOARD_RUMBA32_MKS
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Hexapod"
+#define CUSTOM_MACHINE_NAME "Hexapod Changed Pin file with IJK endstops"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -460,7 +460,7 @@
  *   998 : Dummy Table that ALWAYS reads 25°C or the temperature defined below.
  *   999 : Dummy Table that ALWAYS reads 100°C or the temperature defined below.
  */
-#define TEMP_SENSOR_0 1
+#define TEMP_SENSOR_0 0
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
@@ -895,14 +895,14 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 500 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 800, 800, 800, 800, 800, 800 }
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 400, 400, 400, 400, 400, 400 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -915,7 +915,7 @@
  * Override with M201
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 10000 }
+#define DEFAULT_MAX_ACCELERATION      { 2000, 2000, 2000, 2000, 2000, 2000 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -998,7 +998,7 @@
  * The probe replaces the Z-MIN endstop and is used for Z homing.
  * (Automatically enables USE_PROBE_FOR_Z_HOMING.)
  */
-#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
+//#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
 // Force the use of the probe for Z-axis homing
 //#define USE_PROBE_FOR_Z_HOMING
@@ -1690,12 +1690,12 @@
 
 // Manually set the home position. Leave these undefined for automatic settings.
 // For DELTA this is the top-center of the Cartesian print volume.
-//#define MANUAL_X_HOME_POS 0
-//#define MANUAL_Y_HOME_POS 0
-//#define MANUAL_Z_HOME_POS 0
-//#define MANUAL_I_HOME_POS 0
-//#define MANUAL_J_HOME_POS 0
-//#define MANUAL_K_HOME_POS 0
+//#define MANUAL_X_HOME_POS 150           //put in the future
+//#define MANUAL_Y_HOME_POS 150
+//#define MANUAL_Z_HOME_POS 150
+//#define MANUAL_I_HOME_POS 150
+//#define MANUAL_J_HOME_POS 150
+//#define MANUAL_K_HOME_POS 150
 
 // Use "Z Safe Homing" to avoid homing with a Z probe outside the bed area.
 //
@@ -1714,7 +1714,7 @@
 #endif
 
 // Homing speeds (mm/min)
-#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (4*60) }
+#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (50*60), (50*60), (50*60), (50*60) }
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
