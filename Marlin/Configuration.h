@@ -1330,9 +1330,9 @@
 #define X_HOME_DIR -1
 #define Y_HOME_DIR -1
 #define Z_HOME_DIR -1
-#define I_HOME_DIR -1
-#define J_HOME_DIR -1
-#define K_HOME_DIR -1
+#define I_HOME_DIR 0 
+#define J_HOME_DIR 0 
+#define K_HOME_DIR 0 
 
 // @section machine
 
