@@ -1,4 +1,12 @@
-# Marlin 3D Printer Firmware
+# Marlin 3D Printer Firmware (Enjoy Learning Play Safe Edition)
+
+
+### How to Test
+
+1. On everything and connect to pronterface.
+2. Use the Z slider in the UI - add 10.
+3. Then feed the G-code
+
 
 ![GitHub](https://img.shields.io/github/license/marlinfirmware/marlin.svg)
 ![GitHub contributors](https://img.shields.io/github/contributors/marlinfirmware/marlin.svg)
