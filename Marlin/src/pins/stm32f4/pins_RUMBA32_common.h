@@ -52,11 +52,17 @@
 // Limit Switches
 //
 #define X_MIN_PIN                           PB12
-#define X_MAX_PIN                           PB13
-#define Y_MIN_PIN                           PB15
-#define Y_MAX_PIN                           PD8
-#define Z_MIN_PIN                           PD9
-#define Z_MAX_PIN                           PD10
+#define X_MAX_PIN                           PB12
+#define Y_MIN_PIN                           PB13
+#define Y_MAX_PIN                           PB13
+#define Z_MIN_PIN                           PB15
+#define Z_MAX_PIN                           PB15
+#define I_MIN_PIN                           PD8
+#define I_MAX_PIN                           PD8
+#define J_MIN_PIN                           PD9
+#define J_MAX_PIN                           PD9
+#define K_MIN_PIN                           PD10
+#define K_MAX_PIN                           PD10
 
 //
 // Steppers
@@ -76,20 +82,20 @@
 #define Z_ENABLE_PIN                        PB7
 #define Z_CS_PIN                            PE0
 
-#define E0_STEP_PIN                         PB5
-#define E0_DIR_PIN                          PB6
-#define E0_ENABLE_PIN                       PC12
-#define E0_CS_PIN                           PC13
+#define I_STEP_PIN                         PB5
+#define I_DIR_PIN                          PB6
+#define I_ENABLE_PIN                       PC12
+#define I_CS_PIN                           PC13
 
-#define E1_STEP_PIN                         PD6
-#define E1_DIR_PIN                          PD7
-#define E1_ENABLE_PIN                       PD4
-#define E1_CS_PIN                           PD5
+#define J_STEP_PIN                         PD6
+#define J_DIR_PIN                          PD7
+#define J_ENABLE_PIN                       PD4
+#define J_CS_PIN                           PD5
 
-#define E2_STEP_PIN                         PD2
-#define E2_DIR_PIN                          PD3
-#define E2_ENABLE_PIN                       PD0
-#define E2_CS_PIN                           PD1
+#define K_STEP_PIN                         PD2
+#define K_DIR_PIN                          PD3
+#define K_ENABLE_PIN                       PD0
+#define K_CS_PIN                           PD1
 
 #if ENABLED(TMC_USE_SW_SPI)
   #ifndef TMC_SW_MOSI

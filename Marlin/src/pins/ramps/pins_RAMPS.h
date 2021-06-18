@@ -153,6 +153,13 @@
   #define E1_CS_PIN                           44
 #endif
 
+#define E2_STEP_PIN                           59
+#define E2_DIR_PIN                            63
+#define E2_ENABLE_PIN                         40
+#ifndef E2_CS_PIN
+  #define E2_CS_PIN                           44 // ! empty aux pin
+#endif
+
 //
 // Temperature Sensors
 //
