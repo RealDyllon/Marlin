@@ -4,8 +4,7 @@
 ### How to Test
 
 1. On everything and connect to pronterface.
-2. Use the Z slider in the UI - add 10.
-3. Then feed the G-code
+2. Then feed the G-code.
 
 
 ![GitHub](https://img.shields.io/github/license/marlinfirmware/marlin.svg)
