@@ -105,7 +105,54 @@
     #define Z_MAX_PIN                         19
   #endif
 #endif
-
+// #ifndef E0_STOP_PIN
+//   #ifndef E0_MIN_PIN
+//     #define E0_MIN_PIN                         2
+//   #endif
+//   #ifndef E0_MAX_PIN
+//     #define E0_MAX_PIN                         19
+//   #endif
+// #endif
+// #ifndef E1_STOP_PIN
+//   #ifndef E1_MIN_PIN
+//     #define E1_MIN_PIN                         15
+//   #endif
+//   #ifndef E1_MAX_PIN
+//     #define E1_MAX_PIN                         19
+//   #endif
+// #endif
+// #ifndef E2_STOP_PIN
+//   #ifndef E2_MIN_PIN
+//     #define E2_MIN_PIN                         19
+//   #endif
+//   #ifndef E2_MAX_PIN
+//     #define E2_MAX_PIN                         19
+//   #endif
+// #endif
+#ifndef I_STOP_PIN
+  #ifndef I_MIN_PIN
+    #define I_MIN_PIN                         2
+  #endif
+  #ifndef I_MAX_PIN
+    #define I_MAX_PIN                         19
+  #endif
+#endif
+#ifndef J_STOP_PIN
+  #ifndef J_MIN_PIN
+    #define J_MIN_PIN                         15
+  #endif
+  #ifndef J_MAX_PIN
+    #define J_MAX_PIN                         19
+  #endif
+#endif
+#ifndef K_STOP_PIN
+  #ifndef K_MIN_PIN
+    #define K_MIN_PIN                         19
+  #endif
+  #ifndef K_MAX_PIN
+    #define K_MAX_PIN                         19
+  #endif
+#endif
 //
 // Z Probe (when not Z_MIN_PIN)
 //
