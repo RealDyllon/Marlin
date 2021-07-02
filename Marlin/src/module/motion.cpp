@@ -537,24 +537,24 @@ void do_blocking_move_to(LINEAR_AXIS_ARGS(const float), const_feedRate_t fr_mm_s
 
   #else
 
-    #if HAS_Z_AXIS
-      // If Z needs to raise, do it before moving XY
-      if (current_position.z < z) {
-        current_position.z = z;
-        line_to_current_position(z_feedrate);
-      }
-    #endif
+    // #if HAS_Z_AXIS
+    //   // If Z needs to raise, do it before moving XY
+    //   if (current_position.z < z) {
+    //     current_position.z = z;
+    //     line_to_current_position(z_feedrate);
+    //   }
+    // #endif
 
-    current_position.set(x, y);
+    current_position.set(x, y, z, i, j, k);
     line_to_current_position(xy_feedrate);
 
-    #if HAS_Z_AXIS
-      // If Z needs to lower, do it after moving XY
-      if (current_position.z > z) {
-        current_position.z = z;
-        line_to_current_position(z_feedrate);
-      }
-    #endif
+    // #if HAS_Z_AXIS
+    //   // If Z needs to lower, do it after moving XY
+    //   if (current_position.z > z) {
+    //     current_position.z = z;
+    //     line_to_current_position(z_feedrate);
+    //   }
+    // #endif
 
   #endif
 
@@ -627,6 +627,16 @@ void do_blocking_move_to_x(const_float_t rx, const_feedRate_t fr_mm_s/*=0.0*/) {
     );
   }
 #endif
+
+void do_blocking_move_to_xyzijk(const_float_t rx, const_float_t ry, const_float_t rz, const_float_t ri, const_float_t rj, const_float_t rk, const_feedRate_t fr_mm_s/*=0.0*/) {
+    do_blocking_move_to(LINEAR_AXIS_LIST(rx, ry, rz, ri, rj, rk), fr_mm_s);
+  }
+  void do_blocking_move_to_xyzijk(const xyze_pos_t &raw, const_float_t k, const_feedRate_t fr_mm_s/*=0.0f*/) {
+    do_blocking_move_to_xyzijk(
+      LINEAR_AXIS_LIST(raw.x, raw.y, raw.z, raw.i, raw.j, raw.k),
+      fr_mm_s
+    );
+  }
 
 #if HAS_Y_AXIS
   void do_blocking_move_to_xy(const_float_t rx, const_float_t ry, const_feedRate_t fr_mm_s/*=0.0*/) {

@@ -71,14 +71,15 @@ static void quick_home_xy()
 {
 
   // Pretend the current position is 0,0
+  
   current_position.set(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+  // destination.set(-500, -500, -500, -500, -500, -500);
   sync_plan_position();
-
   const int x_axis_home_dir = TOOL_X_HOME_DIR(active_extruder);
 
   const float mlx = max_length(X_AXIS),
               mly = max_length(Y_AXIS),
-              mlk = max_length(K_AXIS),
+              mlc = max_length(C_AXIS),
               mlratio = mlx > mly ? mly / mlx : mlx / mly,
               fr_mm_s = _MIN(homing_feedrate(X_AXIS), homing_feedrate(Y_AXIS)) * SQRT(sq(mlratio) + 1.0);
 
@@ -96,10 +97,12 @@ static void quick_home_xy()
 #endif
   };
 #endif
-
-  do_blocking_move_to_k(1.5 * mlk * x_axis_home_dir, fr_mm_s);
+  
+  // planner.synchronize;
+  do_blocking_move_to(-500, -500, -500, -500, -500, -500, fr_mm_s);
 
   endstops.validate_homing_move();
+  
 
   current_position.set(0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
 
