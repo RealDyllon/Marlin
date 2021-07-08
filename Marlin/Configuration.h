@@ -65,7 +65,7 @@
 // Examples are located in config/examples/delta, .../SCARA, and .../TPARA.
 //
 //===========================================================================
-
+// #define DELTA
 // @section info
 
 // Author info of this build printed to the host during boot and M115
