@@ -32,16 +32,16 @@ struct AutoReporter {
     AutoReporter() : report_port_mask(SerialMask::All) {}
   #endif
 
-  inline void set_interval(uint8_t seconds, const uint8_t limit=60) {
+  inline void set_interval(uint8_t seconds, const uint8_t limit=100) {
     report_interval = _MIN(seconds, limit);
-    next_report_ms = millis() + SEC_TO_MS(seconds);
+    next_report_ms = millis() + millis_t((seconds)*10UL);
   }
 
   inline void tick() {
     if (!report_interval) return;
     const millis_t ms = millis();
     if (ELAPSED(ms, next_report_ms)) {
-      next_report_ms = ms + SEC_TO_MS(report_interval);
+      next_report_ms = ms + millis_t((report_interval)*10UL);
       PORT_REDIRECT(report_port_mask);
       Helper::report();
       //PORT_RESTORE();

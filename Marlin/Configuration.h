@@ -143,7 +143,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Hexapod ramps adv ok"
+#define CUSTOM_MACHINE_NAME "Hexapod ramps with M114 and M154"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -518,8 +518,8 @@
 // @section machine
 
 // The size of the printable area
-#define X_BED_SIZE 300
-#define Y_BED_SIZE 300
+#define X_BED_SIZE 240
+#define Y_BED_SIZE 240
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -527,13 +527,13 @@
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 300
+#define Z_MAX_POS 240
 #define I_MIN_POS 0
-#define I_MAX_POS 300
+#define I_MAX_POS 240
 #define J_MIN_POS 0
-#define J_MAX_POS 300
+#define J_MAX_POS 240
 #define K_MIN_POS 0
-#define K_MAX_POS 300
+#define K_MAX_POS 240
 
 /**
  * Software Endstops
